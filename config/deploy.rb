@@ -1,6 +1,8 @@
 require 'bundler/capistrano'
+require "whenever/capistrano"
 
-set :application, 'traktcal'
+set :whenever_command, "bundle exec whenever"
+set :application, 'nsfail'
 set :branch, 'master'
 set :deploy_to, "/home/#{application}/app"
 
@@ -20,7 +22,6 @@ set :use_sudo, false
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-after 'deploy:update_code', 'deploy:link_api_keys'
 
 namespace :deploy do
   task :start, :roles => :app do
@@ -31,7 +32,4 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 
-  task :link_api_keys do
-    run "ln -s #{shared_path}/config/api_keys.rb #{release_path}/config/api_keys.rb"
-  end
 end

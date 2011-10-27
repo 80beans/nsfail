@@ -23,8 +23,6 @@ class Fail
     elsif city_coordinates = find_city_coordinates(tweet['text'])
       new_fail['geo'] = { :coordinates => [city_coordinates], :type => 'Point'}
     end
-    puts new_fail['geo'].inspect
-    sleep 0.1
     create!(new_fail)
   end
 
