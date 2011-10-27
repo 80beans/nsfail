@@ -11,7 +11,7 @@ class Fetcher
     search = Twitter::Search.new
     search.hashtag("nsfail").no_retweets.per_page(999).each do |tweet|
       unless Fail.exists?(:conditions => { :id => tweet.id })
-        Fail.create(tweet)
+        Fail.create_from_tweet(tweet)
       end
     end
   end
