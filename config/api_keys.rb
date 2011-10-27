@@ -1,0 +1,1 @@
+TRAKT_API_KEY = 'f05a4d93a7b0838ea46b12a6e86c6cdb'
