@@ -1,22 +1,20 @@
 !!!
 
-%html.no-js
+%html
   %head
     %meta{'charset' => 'utf-8'}
-    %title TraktCal
+    %title #NSFail.nl
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
     %link{:href => '/application.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
   %body
 
+    %header#header
+      %h1 NSFAIL
 
-    #content
+    = yield
 
-      %header#head
-        %h1 NSFAIL
-      %section#main
-        = yield
-      %footer#footer
-        %p Created by Robert Beekman - css from <a href="https://github.com/sinatra/sinatra.github.com">Sinatra</a>
+    %footer#footer
+
   %script{:type => 'text/javascript', :src => 'http://code.jquery.com/jquery-1.6.4.min.js'}
-  %script{:type => 'text/javascript', :src => '/javascript/jquery.sha1.js'}
-  %script{:type => 'text/javascript', :src => '/javascript/application.js'}
+  %script{:type => 'text/javascript', :src => 'http://maps.googleapis.com/maps/api/js?sensor=false'}
+  %script{:type => 'text/javascript', :src => '/javascripts/application.js'}
