@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'mongoid'
 require 'lib/fail'
+
 class Application < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :views, settings.root + '/templates'

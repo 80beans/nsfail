@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'sinatra'
+gem 'sinatra', '~> 1.3.1'
+gem 'shotgun'
 gem 'yajl-ruby'
 gem 'curb'
 gem 'capistrano'
