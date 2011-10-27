@@ -35,8 +35,10 @@ class Application < Sinatra::Base
 
   get '/fails.json' do
     return File.read(File.join('fails.json'))
+  end
 
-   # content_type 'application/json', :charset => 'utf-8'
+  get '/f.json' do
     Fail.desc(:id).to_json
   end
+
 end
