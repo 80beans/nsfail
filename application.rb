@@ -19,7 +19,7 @@ class Application < Sinatra::Base
 
   get '/application.css' do
     content_type 'text/css', :charset => 'utf-8'
-    sass :application, :style => :expanded
+    scss :application, :style => :expanded
   end
 
 end
