@@ -1,5 +1,6 @@
 require 'sinatra'
-
+require 'mongoid'
+require 'lib/fail'
 class Application < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :views, settings.root + '/templates'
@@ -26,10 +27,15 @@ class Application < Sinatra::Base
     haml :index
   end
 
-
   get '/application.css' do
     content_type 'text/css', :charset => 'utf-8'
     sass :application, :style => :expanded
   end
 
+  get '/fails.json' do
+    return File.read(File.join('fails.json'))
+
+   # content_type 'application/json', :charset => 'utf-8'
+    Fail.desc(:id).to_json
+  end
 end
