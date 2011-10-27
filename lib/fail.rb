@@ -27,7 +27,6 @@ class Fail
   end
 
   def self.find_city_coordinates(text)
-    puts text
     CITIES.each do |city|
       if text.downcase.include?(" #{city} ")
         return CITIES_GEO[city]
