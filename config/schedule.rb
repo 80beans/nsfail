@@ -1,3 +1,3 @@
 every 5.minutes do
-  rake "fetcher"
+  rake "fetch"
 end
