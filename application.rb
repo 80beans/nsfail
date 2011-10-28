@@ -30,7 +30,7 @@ class Application < Sinatra::Base
 
   get '/application.css' do
     content_type 'text/css', :charset => 'utf-8'
-    scss :application, :style => :expanded
+    sass :application, :style => :expanded
   end
 
   get '/fails.json' do
