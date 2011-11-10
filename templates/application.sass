@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Ultra)
+
+// Fonts
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+$alt-font: 'Ultra', $font-family
+
 *
   margin: 0
   padding: 0
@@ -6,15 +12,14 @@ html,
 body
   width: 100%
   height: 100%
-  background: #FFF
+  background: #fff
 
 body
-  font: 62.5% Helvetica, Arial, sans-serif
+  font: 62.5% $font-family
 
 h1
   margin: 0
 
-#header,
 #footer
   position: absolute
 
@@ -22,20 +27,75 @@ h1
   width: 100%
   height: 100%
 
+#logo
+  top: 20px
+  left: 100px
+  position: absolute
+  font-family: $alt-font
+  font-size: 6em
+  color: #333
+  z-index: 10
+
 .twitterticker
-  bottom: 0
+  bottom: 100px
   left: 3em
   position: absolute
   position: fixed
   right: 3em
-  
+
   li
-    background: #FFF
-    background: rgba(255, 255, 255, 0.85)
-    bottom: -100px
+    color: #fff
+    background: #000
+    background: rgba(0, 0, 0, 0.85)
+    //bottom: -100px
     display: block
     font-size: 1.6em
     left: 0
     padding: 1em
     position: absolute
     right: 0
+
+span.border
+  position: fixed
+  border-color: #000
+  opacity: 0.75
+
+  &.top,
+  &.bottom
+    height: 1px
+    left: 0
+    right: 0
+    border-top: solid 4px
+    border-bottom: solid 1px
+
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+    border-top: solid 1px
+    border-bottom: solid 4px
+
+  &.right,
+  &.left
+    width: 1px
+    top: 0
+    bottom: 0
+    border-right: solid 4px
+    border-left: solid 1px
+
+  &.right
+    right: 0
+  &.left
+    left: 0
+    border-right: solid 1px
+    border-left: solid 4px
+
+#cities
+  width: 336px
+  height: 133px
+  top: 200px
+  left: 0
+  position: absolute
+  padding: 52px 20px 20px
+  background: url("images/bg_box.png")
+  overflow: hidden
