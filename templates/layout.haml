@@ -1,4 +1,4 @@
-!!!
+!!!5
 
 %html
   %head
@@ -8,25 +8,22 @@
     %link{:href => '/application.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
   %body
 
-    %header#header
-      %h1#logo #NSFail
-      /%nav
-      /  %ul
-      /    %li
-      /      %a{:href => '#'} About
-      /    %li
-      /      %a{:href => '#'} Who we are
+    %header
+      %h1#logo
+        %a{:href=> '/'} #NSFail
+      %nav
+        %ul
+          %li
+            %a{:href => '#'} About
+          %li
+            %a{:href => '#'} Who we are
 
-      = yield
+    = yield
 
-      %footer#footer
+    %a{:href => '#', :class => 'pin'}
+      %span 12
 
-    %span.border.top
-    %span.border.right
-    %span.border.bottom
-    %span.border.left
-
-  %script{:type => 'text/javascript', :src => 'http://code.jquery.com/jquery-1.6.4.min.js'}
-  %script{:type => 'text/javascript', :src => 'http://maps.googleapis.com/maps/api/js?sensor=false'}
-  %script{:type => 'text/javascript', :src => '/javascripts/twitterticker.js'}
-  %script{:type => 'text/javascript', :src => '/javascripts/application.js'}
+  %script{ :src => 'http://code.jquery.com/jquery-1.6.4.min.js'}
+  %script{ :src => 'http://maps.googleapis.com/maps/api/js?sensor=false'}
+  %script{ :src => '/javascripts/twitterticker.js'}
+  %script{ :src => '/javascripts/application.js'}

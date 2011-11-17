@@ -1,8 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Ultra)
-
 // Fonts
 $font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-$alt-font: 'Ultra', $font-family
+
+$font-color: #444
 
 *
   margin: 0
@@ -13,89 +12,134 @@ body
   width: 100%
   height: 100%
   background: #fff
+  color: $font-color
 
 body
   font: 62.5% $font-family
 
 h1
+  font-size: 1.8em
   margin: 0
 
-#footer
-  position: absolute
+a
+  color: #fff
+  text-decoration: none
+
+  &:hover
+    color: #febd4c
 
 #map_canvas
   width: 100%
   height: 100%
+  margin-top: 41px
 
-#logo
-  top: 20px
-  left: 100px
-  position: absolute
-  font-family: $alt-font
-  font-size: 6em
-  color: #333
-  z-index: 10
-
-.twitterticker
-  bottom: 100px
-  left: 3em
-  position: absolute
+header
+  top: 0
+  left: 0
+  right: 0
+  height: 40px
   position: fixed
-  right: 3em
+  font-size: 1.3em
+  background: #333
+  color: #fff
+  z-index: 5
+
+  ul
+    float: right
+    margin-top: 12px
 
   li
-    color: #fff
+    float: left
+    margin-right: 2em
+    list-style: none
+
+#logo a
+  top: 0
+  left: 20px
+  position: absolute
+  font-size: 1.4em
+  font-weight: normal
+
+.twitterticker
+  width: 50%
+  bottom: 0px
+  left: 3em
+  right: 3em
+  position: fixed
+  margin: 0 auto
+
+  li
+    color: $font-color
     background: #000
-    background: rgba(0, 0, 0, 0.85)
-    //bottom: -100px
+    background: rgba(252, 252, 252, 0.85)
+    bottom: -100px
     display: block
     font-size: 1.6em
     left: 0
     padding: 1em
     position: absolute
     right: 0
-
-span.border
-  position: fixed
-  border-color: #000
-  opacity: 0.75
-
-  &.top,
-  &.bottom
-    height: 1px
-    left: 0
-    right: 0
-    border-top: solid 4px
-    border-bottom: solid 1px
-
-  &.top
-    top: 0
-  &.bottom
-    bottom: 0
-    border-top: solid 1px
-    border-bottom: solid 4px
-
-  &.right,
-  &.left
-    width: 1px
-    top: 0
-    bottom: 0
-    border-right: solid 4px
-    border-left: solid 1px
-
-  &.right
-    right: 0
-  &.left
-    left: 0
-    border-right: solid 1px
-    border-left: solid 4px
+    -webkit-border-radius: 5px 5px 0 0
+    -moz-border-radius: 5px 5px 0 0
+    border-radius: 5px 5px 0 0
+    border-top: solid 1px #bababa
+    border-right: solid 1px #bababa
+    border-left: solid 1px #bababa
 
 #cities
   width: 336px
-  height: 133px
-  top: 200px
-  left: 0
+  height: 123px
+  top: 110px
+  left: 100px
   position: absolute
-  padding: 52px 20px 20px
+  padding: 52px 20px 30px
   background: url("images/bg_box.png")
   overflow: hidden
+
+  h1
+    position: absolute
+    margin-top: -33px
+
+  a
+    display: block
+    padding-right: 10px
+    font-size: 1.2em
+    font-weight: bold
+    text-shadow: 0 1px 1px #ffffff
+    color: #996633
+    background: url("images/bg_tag.png") right
+
+    &:hover
+      color: $font-color
+
+  ul
+    height: 105px
+    margin: 16px 0 0 -10px
+    overflow: hidden
+
+  li
+    float: left
+    margin: 10px 0 0 10px
+    padding-left: 20px
+    line-height: 23px
+    list-style: none
+    background: url("images/left_tag.png")
+
+.pin
+  width: 38px
+  height: 45px
+  top: 367px
+  left: 703px
+  position: absolute
+  display: block
+  padding-top: 8px
+  text-align: center
+  font-size: 1.4em
+  font-weight: bold
+  color: #fff
+  text-shadow: 0 1px 1px $font-color
+  background: url("images/pin.png")
+
+  &:hover
+    color: #fff
+
