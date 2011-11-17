@@ -91,6 +91,9 @@ header
       border: 1px solid $border-color
       float: left
       margin-right: 1em
+      width: 48px
+      height: 48px
+      overflow: hidden
 
       img
         display: block
@@ -100,10 +103,21 @@ header
       color: #666
       content: '"'
 
-    time
+    .meta
       color: #666
       font-size: 0.8em
       font-style: italic
+
+    a
+      color: #996633
+
+      &.nsfailmatch
+        font-weight: bold
+
+      &:hover,
+      &:focus
+        color: #644323
+        text-decoration: underline
 
 #cities
   width: 336px

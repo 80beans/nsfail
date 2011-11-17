@@ -1,8 +1,8 @@
 (function($) {
   $.fn.twitterticker = function(options) {
     var defaults = {
-          duration: 2500,
-          interval: 5000,
+          duration: 1000,
+          interval: 7000,
           tweets: {}
         },
         count = 0,
@@ -26,8 +26,11 @@
       var tweet = defaults.tweets[i];
       html += '<li>' +
         '<a class="avatar" href="http://twitter.com/' + tweet.from_user + '"><img src="' + tweet.profile_image_url + '" alt="' + tweet.from_user + '"></a>' +
-        '<blockquote>' + tweet.text + '</blockquote>' +
-        '<time datetime="' + tweet.updated_at + '">' + tweet.updated_at + '</time>' +
+        '<blockquote>' + formatTweet(tweet.text) + '</blockquote>' +
+        '<p class="meta">' +
+          '<a href="http://twitter.com/' + tweet.from_user + '">@' + tweet.from_user + '</a> tweette dit ' +
+          '<time datetime="' + tweet.updated_at + '">' + tweet.updated_at + '</time>' +
+        '</p>' +
       '</li>';
     }
 
@@ -41,6 +44,17 @@
 
 
     if (container.find('li').length === 1) return elms;
+
+
+    function formatTweet(tweet) {
+      tweet = tweet.replace(/((http)+(s)?:\/\/[^<>\s]+)/ig, '<a href="$1" target="_blank">$1</a>');
+      tweet = tweet.replace(/[@]+([A-Za-z0-9-_]+)/ig, '<a href="http://twitter.com/$1" target="_blank">@$1</a>');
+      return tweet.replace(/[#]+([A-Za-z0-9-_]+)/ig, function(str, p1, offset, s){
+        if (p1.toLowerCase() == 'nsfail')
+          return '<a href="http://twitter.com/search?q=%23' + p1 + '" target="_blank" class="nsfailmatch">#' + p1 + '</a>';
+        return '<a href="http://twitter.com/search?q=%23' + p1 + '" target="_blank">#' + p1 + '</a>';
+      });
+    }
 
 
     function showNext(elm) {
