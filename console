@@ -7,6 +7,8 @@ Bundler.require
 
 root = ::File.dirname(__FILE__)
 
-libs =  "-r irb/completion"
+libs = []
+libs << "-r irb/completion"
 libs << "-r ./application"
 exec "irb #{libs.join(" ")} --simple-prompt"
+
