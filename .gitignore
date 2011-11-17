@@ -2,3 +2,7 @@ public/javascript
 .sass*
 .sass-cache/*
 .DS_Store
+
+# vim backupfiles
+.*~
+
