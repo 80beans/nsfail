@@ -13,6 +13,21 @@ class Fail
   field :source
   field :text
 
+  index [[ 'geo.coordinates', Mongo::GEO2D ]], :min => -180, :max => 180
+
+  scope :search, lambda { |coordinates|
+    where({
+      "geo" => {
+        "$within" => {
+          "$center" => [
+            coordinates,
+            '100'
+          ]
+        }
+      }
+    })
+  }
+
   def self.create_from_tweet(tweet)
     new_fail = {}
     self.fields.each do |fld, metadata|
@@ -29,9 +44,10 @@ class Fail
   def self.find_city_coordinates(text)
     CITIES.each do |city|
       if text.downcase.include?(" #{city} ")
-        return CITIES_GEO[city]
+        return CITIES_GEO[city].map{ |coo| coo.to_f }
       end
     end
     return nil
   end
+
 end

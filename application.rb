@@ -37,4 +37,8 @@ class Application < Sinatra::Base
     Fail.desc(:id).to_json
   end
 
+  get '/cities.json' do
+    Fail.search([52.35000000, 4.91666700]).json
+  end
+
 end
