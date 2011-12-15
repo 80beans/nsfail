@@ -34,10 +34,6 @@ class Application < Sinatra::Base
   end
 
   get '/fails.json' do
-    return File.read(File.join('fails.json'))
-  end
-
-  get '/f.json' do
     Fail.desc(:id).to_json
   end
 
