@@ -1,7 +1,7 @@
 // Fonts
 $font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 $font-color: #444
-$border-color: #bababa
+$border-color: #BABABA
 
 *
   margin: 0
@@ -11,7 +11,7 @@ html,
 body
   width: 100%
   height: 100%
-  background: #fff
+  background: #FFF
   color: $font-color
 
 body
@@ -22,11 +22,11 @@ h1
   margin: 0
 
 a
-  color: #fff
+  color: #FFF
   text-decoration: none
 
   &:hover
-    color: #febd4c
+    color: #FEBD4C
 
 #map_canvas
   width: 100%
@@ -41,7 +41,7 @@ header
   position: fixed
   font-size: 1.3em
   background: #333
-  color: #fff
+  color: #FFF
   z-index: 5
 
   ul
@@ -137,34 +137,33 @@ header
     line-height: 44px
     background: #eaeaea
     border-bottom: solid 1px #bababa
-    -webkit-box-shadow: inset 0 -1px 0 0 #fff
-    -moz-box-shadow: inset 0 -1px 0 0 #fff
-    box-shadow: inset 0 -1px 0 0 #fff
-
-  a
-    display: block
-    padding-right: 10px
-    font-size: 1.2em
-    font-weight: bold
-    text-shadow: 0 1px 1px #ffffff
-    color: #996633
-    background: url("images/bg_tag.png") right
-
-    &:hover
-      color: $font-color
+    -webkit-box-shadow: inset 0 -1px 0 0 #FFF
+    -moz-box-shadow: inset 0 -1px 0 0 #FFF
+    box-shadow: inset 0 -1px 0 0 #FFF
 
   ul
     height: 105px
     margin: 16px 0 0 -10px
     overflow: hidden
-
+  
   li
     float: left
     margin: 10px 0 0 10px
-    padding-left: 20px
-    line-height: 23px
     list-style: none
-    background: url("images/left_tag.png")
+
+  a
+    float: left
+    line-height: 23px
+    background: url("images/left_tag.png") no-repeat, url("images/bg_tag.png") right
+    display: block
+    padding: 0 10px 0 20px
+    font-size: 1.2em
+    font-weight: bold
+    text-shadow: 0 1px 1px #FFF
+    color: #996633
+
+    &:hover
+      color: $font-color
 
 #cities
   top: 110px
@@ -187,5 +186,5 @@ header
   background: url("images/pin.png")
 
   &:hover
-    color: #fff
+    color: #FFF
 

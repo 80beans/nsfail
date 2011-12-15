@@ -10,6 +10,7 @@ var NSFail = {
         tweets = null;
 
     $.getJSON('fails.json', function(data) {
+      console.log(data);
       $('body').twitterticker({
         tweets: data
       });

@@ -2,7 +2,7 @@
   $.fn.twitterticker = function(options) {
     var defaults = {
           duration: 1000,
-          interval: 7000,
+          interval: 6000,
           tweets: {}
         },
         count = 0,
@@ -14,9 +14,6 @@
 
 
     $.extend(defaults, options);
-
-
-    console.log(defaults.tweets);
 
 
     if (defaults.tweets.length === 0) return elms;
@@ -49,7 +46,7 @@
     function formatTweet(tweet) {
       tweet = tweet.replace(/((http)+(s)?:\/\/[^<>\s]+)/ig, '<a href="$1" target="_blank">$1</a>');
       tweet = tweet.replace(/[@]+([A-Za-z0-9-_]+)/ig, '<a href="http://twitter.com/$1" target="_blank">@$1</a>');
-      return tweet.replace(/[#]+([A-Za-z0-9-_]+)/ig, function(str, p1, offset, s){
+      return tweet.replace(/[#]+([^\s]+)/ig, function(str, p1, offset, s){
         if (p1.toLowerCase() == 'nsfail')
           return '<a href="http://twitter.com/search?q=%23' + p1 + '" target="_blank" class="nsfailmatch">#' + p1 + '</a>';
         return '<a href="http://twitter.com/search?q=%23' + p1 + '" target="_blank">#' + p1 + '</a>';
@@ -93,8 +90,6 @@
     }).mouseleave(function() {
       if (tickerInterval !== null) return;
       tickerInterval = setInterval(go, defaults.interval);
-    }).click(function(e) {
-      e.preventDefault();
     });
 
 
