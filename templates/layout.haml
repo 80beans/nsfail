@@ -14,16 +14,41 @@
       %nav
         %ul
           %li
-            %a{:href => '#'} About
-          %li
-            %a{:href => '#'} Who we are
+            %a{:href => '#about'} Over NSFail.nl
+    
+    %section.box#about
+      %h1 Over NSFail.nl
+      %p
+        Op de kaart op deze website laten we steden zien waar de NS het meeste faalt. Je kunt selecteren welke in tijdsspanne gezocht moet worden.
+      %p
+        Door in een tweet de hashtag 
+        %strong #nsfail
+        te gebruiken, komt deze automatisch op deze website.
+      %p
+        Let up: het handigste is om lokatiedata aan je tweet te koppelen. Dit dien je eerst
+        %a{ :href => 'https://twitter.com/settings/account' } aan te zetten in Twitter
+        bij de instellingen voor je account.
+      
+      %h2 Gemaakt door
+      %p
+        Deze website is gemaakt tijdens de
+        %a{ :href => 'amsterdamhacknight.eventbrite.com' } 80beans Hack Night
+        door
+        %a{ :href => 'http://twitter.com/matsimitsu' } Robert Beekman
+        ,
+        %a{ :href => 'http://twitter.com/roncadier' } Ron Cadier
+        ,
+        %a{ :href => 'http://twitter.com/eising' } Arjan Eising
+        ,
+        %a{ :href => 'http://twitter.com/tijn' } Tijn Schuurmans
+        ,
+        %a{ :href => 'http://twitter.com/ivanasetiawan' } Ivana Setiawan
+        en
+        %a{ :href => 'http://twitter.com/roy' } Roy Tomeij.
 
     = yield
 
-    %a{:href => '#', :class => 'pin'}
-      %span 12
-
-  %script{ :src => 'http://code.jquery.com/jquery-1.6.4.min.js'}
+  %script{ :src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'}
   %script{ :src => 'http://maps.googleapis.com/maps/api/js?sensor=false'}
   %script{ :src => '/javascripts/jquery.timeago.js'}
   %script{ :src => '/javascripts/twitterticker.js'}
